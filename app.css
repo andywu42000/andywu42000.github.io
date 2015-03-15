@@ -7,14 +7,8 @@
 }
 
 #introduction{
-	position: fixed;
-	left: 400px;
 	color: black;
 	font-size: 20px;
 }
 
-#photo{
-	position: fixed;
-	right: 400px;
-}
 
