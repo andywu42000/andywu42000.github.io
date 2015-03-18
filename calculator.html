@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript計算機</title>
+	<link rel="stylesheet" type="text/css" href="calc.css">
+</head>
+<body>
+	<style>
+		div#calculator{border: 0px;}
+	</style>
+	<h1 id="jsCalc" align="center">JavaScript計算機</h1>
+	<h3 align="center"><marquee id="welcome" width="500">歡迎使用！</marquee></h3>
+	<div id="ans" align="center">0</div>
+	<br>
+	<div id="calculator" align="center">
+		<h3>
+			<div><button id="1" onclick="calcu(1)">1</button></div>
+			<div><button id="2" onclick="calcu(2)">2</button></div>
+			<div><button id="3" onclick="calcu(3)">3</button></div>
+			<div><button id="plus" onclick="calcu(10)">+</button></div>
+			<div><button id="4" onclick="calcu(4)">4</button></div>
+			<div><button id="5" onclick="calcu(5)">5</button></div>
+			<div><button id="6" onclick="calcu(6)">6</button></div>
+			<div><button id="minus" onclick="calcu(11)">-</button></div>
+			<div><button id="7" onclick="calcu(7)">7</button></div>
+			<div><button id="8" onclick="calcu(8)">8</button></div>
+			<div><button id="9" onclick="calcu(9)">9</button></div>
+			<div><button id="mutiple" onclick="calcu(12)">×</button></div>
+			<div><button id="point" onclick="calcu(15)">.</button></div>
+			<div><button id="0" onclick="calcu(0)">0</button></div>
+			<div><button id="c" onclick="calcu(14)">C</button></div>
+			<div><button id="divide" onclick="calcu(13)">÷</button></div>
+			<div><button id="answer" onclick="calcu(16)">=</button></div>
+		</h3>
+	</div>
+	<script type="text/javascript">
+		var result = "", temp = 0, temp2 = 0, situation = 0;
+
+		function calcu (func) {
+
+			switch(func) {
+
+				case 1:
+					if(temp == 0) {
+						result = "1";
+						temp = 1;
+					}else {
+						if(situation != 0) {
+							result += "1";
+							temp2 = temp2 * 10 + 1;
+						}else {
+							result += "1";
+							temp = temp * 10 + 1;
+						}	
+					}
+					
+					document.getElementById("ans").innerHTML=result.toString();
+			
+					break;
+				case 2:
+					if(temp == 0) {
+						result = "2";
+						temp = 2;
+					}else {
+						if(situation != 0) {
+							result += "2";
+							temp2 = temp2 * 10 + 2;
+						}else {
+							result += "2";
+							temp = temp * 10 + 2;
+						}
+					}
+
+					document.getElementById("ans").innerHTML=result.toString();
+
+					break;
+				case 3:
+					if(temp == 0) {
+						result = "3";
+						temp = 3;
+					}else {
+						if(situation != 0) {
+							result += "3";
+							temp2 = temp2 * 10 + 3;
+						}else {
+							result += "3";
+							temp = temp * 10 + 3;
+						}
+					}
+
+					document.getElementById("ans").innerHTML=result.toString();
+
+					break;
+				case 4:
+					if(temp == 0) {
+						result = "4";
+						temp = 4;
+					}else {
+						if(situation != 0) {
+							result += "4";
+							temp2 = temp2 * 10 + 4;
+						}else {
+							result += "4";
+							temp = temp * 10 + 4;
+						}
+					}
+
+					document.getElementById("ans").innerHTML=result.toString();
+
+					break;
+				case 5:
+					if(temp == 0) {
+						result = "5";
+						temp = 5;
+					}else {
+						if(situation != 0) {
+							result += "5";
+							temp2 = temp2 * 10 + 5;
+						}else {
+							result += "5";
+							temp = temp * 10 + 5;
+						}
+					}
+
+					document.getElementById("ans").innerHTML=result.toString();
+
+					break;
+				case 6:
+					if(temp == 0) {
+						result = "6";
+						temp = 6;
+					}else {
+						if(situation != 0) {
+							result += "6";
+							temp2 = temp2 * 10 + 6;
+						}else {
+							result += "6";
+							temp = temp * 10 + 6;
+						}
+					}
+
+					document.getElementById("ans").innerHTML=result.toString();
+
+					break;
+				case 7:
+					if(temp == 0) {
+						result = "7";
+						temp = 7;
+					}else {
+						if(situation != 0) {
+							result += "7";
+							temp2 = temp2 * 10 + 7;
+						}else {
+							result += "7";
+							temp = temp * 10 + 7;
+						}
+					}
+
+					document.getElementById("ans").innerHTML=result.toString();
+
+					break;
+				case 8:
+					if(temp == 0) {
+						result = "8";
+						temp = 8;
+					}else {
+						if(situation != 0) {
+							result += "8";
+							temp2 = temp2 * 10 + 8;
+						}else {
+							result += "8";
+							temp = temp * 10 + 8;
+						}
+					}
+
+					document.getElementById("ans").innerHTML=result.toString();
+
+					break;
+				case 9:
+					if(temp == 0) {
+						result = "9";
+						temp = 9;
+					}else {
+						if(situation != 0) {
+							result += "9";
+							temp2 = temp2 * 10 + 9;
+						}else {
+							result += "9";
+							temp = temp * 10 + 9;
+						}
+					}
+
+					document.getElementById("ans").innerHTML=result.toString();
+
+					break;
+				case 0:
+					if(temp == 0) {
+						result = "0";
+						temp = 0;
+					}else {
+						if(situation != 0) {
+							result += "0";
+							temp2 = temp2 * 10;
+						}else {
+							result += "0";
+							temp = temp * 10;
+						}
+					}
+
+					document.getElementById("ans").innerHTML=result.toString();
+
+					break;
+				case 10:
+					if(situation != 0) {
+						temp += temp2;
+						result = temp.toString();
+						document.getElementById("ans").innerHTML=result.toString();
+						situation = 0;
+						temp2 = 0;
+					}else {
+						result += " + ";
+						document.getElementById("ans").innerHTML=result.toString();
+						situation = 1;
+					}
+
+					break;
+				case 11:
+					if(situation != 0) {
+						temp -= temp2;
+						result = temp.toString();
+						document.getElementById("ans").innerHTML=result.toString();
+						situation = 0;
+						temp2 = 0;
+					}else {
+						result += " - ";
+						document.getElementById("ans").innerHTML=result.toString();
+						situation = 2;
+					}
+
+					break;
+				case 12:
+					if(situation != 0) {
+						temp *= temp2;
+						result = temp;
+						document.getElementById("ans").innerHTML=result.toString();
+						situation = 0;
+						temp2 = 0;
+					}else {
+						result += " × ";
+						document.getElementById("ans").innerHTML=result.toString();
+						situation = 3;
+					}
+
+					break;
+				case 13:
+					if(situation != 0) {
+						temp /= temp2;
+						result = temp;
+						document.getElementById("ans").innerHTML=result.toString();
+						situation = 0;
+						temp2 = 0;
+					}else {
+						result += " ÷ ";
+						document.getElementById("ans").innerHTML=result.toString();
+						situation = 4;
+					}
+
+					break;
+				case 14:
+					if(result != 0) {
+						result = 0;
+					}
+					document.getElementById("ans").innerHTML=result.toString();
+
+					break;
+				
+
+				case 16:
+					if(situation == 1) {
+						temp += temp2;
+						result = temp;
+					}else if(situation == 2) {
+						temp -= temp2;
+						result = temp;
+					}else if(situation == 3) {
+						temp *= temp2;
+						result = temp;						
+					}else if(situation == 4) {
+						temp /= temp2;
+						result = temp;				
+					}else if(situation == 5) {
+
+					}
+					
+					document.getElementById("ans").innerHTML=result.toString();
+					result = 0, temp = 0, temp2 = 0, situation = 0;
+
+					break;
+
+				default:
+
+					break;
+			}
+
+		}
+
+	</script>
+</body>
+</html>
