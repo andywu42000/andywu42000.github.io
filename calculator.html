@@ -27,11 +27,10 @@
 			<div><button id="8" onclick="calcu(8)">8</button></div>
 			<div><button id="9" onclick="calcu(9)">9</button></div>
 			<div><button id="mutiple" onclick="calcu(12)">×</button></div>
-			<div><button id="point" onclick="calcu(15)">.</button></div>
-			<div><button id="0" onclick="calcu(0)">0</button></div>
 			<div><button id="c" onclick="calcu(14)">C</button></div>
+			<div><button id="0" onclick="calcu(0)">0</button></div>
+			<div><button id="answer" onclick="calcu(15)">=</button></div>
 			<div><button id="divide" onclick="calcu(13)">÷</button></div>
-			<div><button id="answer" onclick="calcu(16)">=</button></div>
 		</h3>
 	</div>
 	<script type="text/javascript">
@@ -213,11 +212,22 @@
 					break;
 				case 10:
 					if(situation != 0) {
-						temp += temp2;
-						result = temp.toString();
-						document.getElementById("ans").innerHTML=result.toString();
-						situation = 0;
-						temp2 = 0;
+						if(situation == 1) {
+							temp += temp2;
+							plus();
+						}else if(situation == 2) {
+							temp -= temp2;
+							plus();
+						}else if(situation == 3) {
+							temp *= temp2;
+							plus();
+						}else if(situation == 4) {
+							temp /= temp2;
+							plus();
+						}else if(situation = 5) {
+
+						}
+						
 					}else {
 						result += " + ";
 						document.getElementById("ans").innerHTML=result.toString();
@@ -227,11 +237,21 @@
 					break;
 				case 11:
 					if(situation != 0) {
-						temp -= temp2;
-						result = temp.toString();
-						document.getElementById("ans").innerHTML=result.toString();
-						situation = 0;
-						temp2 = 0;
+						if(situation == 1) {
+							temp += temp2;
+							minus();
+						}else if(situation == 2) {
+							temp -= temp2;
+							minus();
+						}else if(situation == 3) {
+							temp *= temp2;
+							minus();
+						}else if(situation == 4) {
+							temp /= temp2;
+							minus();
+						}else if(situation = 5) {
+
+						}
 					}else {
 						result += " - ";
 						document.getElementById("ans").innerHTML=result.toString();
@@ -241,11 +261,21 @@
 					break;
 				case 12:
 					if(situation != 0) {
-						temp *= temp2;
-						result = temp;
-						document.getElementById("ans").innerHTML=result.toString();
-						situation = 0;
-						temp2 = 0;
+						if(situation == 1) {
+							temp += temp2;
+							mutiple();
+						}else if(situation == 2) {
+							temp -= temp2;
+							mutiple();
+						}else if(situation == 3) {
+							temp *= temp2;
+							mutiple();
+						}else if(situation == 4) {
+							temp /= temp2;
+							mutiple();
+						}else if(situation = 5) {
+
+						}
 					}else {
 						result += " × ";
 						document.getElementById("ans").innerHTML=result.toString();
@@ -255,11 +285,21 @@
 					break;
 				case 13:
 					if(situation != 0) {
-						temp /= temp2;
-						result = temp;
-						document.getElementById("ans").innerHTML=result.toString();
-						situation = 0;
-						temp2 = 0;
+						if(situation == 1) {
+							temp += temp2;
+							divide();
+						}else if(situation == 2) {
+							temp -= temp2;
+							divide();
+						}else if(situation == 3) {
+							temp *= temp2;
+							divide();
+						}else if(situation == 4) {
+							temp /= temp2;
+							divide();
+						}else if(situation = 5) {
+
+						}
 					}else {
 						result += " ÷ ";
 						document.getElementById("ans").innerHTML=result.toString();
@@ -270,13 +310,16 @@
 				case 14:
 					if(result != 0) {
 						result = 0;
+						temp = 0;
+						temp2 = 0;
+						situation = 0;
 					}
 					document.getElementById("ans").innerHTML=result.toString();
 
 					break;
 				
 
-				case 16:
+				case 15:
 					if(situation == 1) {
 						temp += temp2;
 						result = temp;
@@ -294,7 +337,7 @@
 					}
 					
 					document.getElementById("ans").innerHTML=result.toString();
-					result = 0, temp = 0, temp2 = 0, situation = 0;
+					temp2 = 0, situation = 0;
 
 					break;
 
@@ -303,6 +346,34 @@
 					break;
 			}
 
+		}
+
+		function plus() {
+			result = temp.toString() + " + ";
+			document.getElementById("ans").innerHTML=result.toString();
+			situation = 1;
+			temp2 = 0;
+		}
+
+		function minus() {
+			result = temp.toString() + " - ";
+			document.getElementById("ans").innerHTML=result.toString();
+			situation = 2;
+			temp2 = 0;
+		}
+
+		function mutiple() {
+			result = temp.toString() + " × ";
+			document.getElementById("ans").innerHTML=result.toString();
+			situation = 3;
+			temp2 = 0;	
+		}
+
+		function divide() {
+			result = temp.toString() + " ÷ ";
+			document.getElementById("ans").innerHTML=result.toString();
+			situation = 4;
+			temp2 = 0;	
 		}
 
 	</script>
